@@ -66,4 +66,4 @@ Ghana | 2026
 """)
 
 st.divider()
-st.caption('For inquiries contact Sankofa Intelligence')
+st.caption('For inquiries contact Sankofa Intelligence: Lawrence Williams: 0552211116')
