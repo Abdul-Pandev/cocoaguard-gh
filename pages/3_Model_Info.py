@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title('Model Information')
-st.caption('Technical details about the CocoaGuard GH classification model')
+st.caption('Technical details about the FarmEye classification model')
 st.divider()
 
 col1, col2 = st.columns(2)
