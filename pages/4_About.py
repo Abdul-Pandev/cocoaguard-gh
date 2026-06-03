@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title('About CocoaGuard GH')
+st.title('About FarmEye')
 
 st.divider()
 
@@ -49,7 +49,7 @@ are easy to miss without trained eyes.
 
 ## The Solution
 
-CocoaGuard GH uses a deep learning model trained on thousands of 
+FarmEye uses a deep learning model trained on thousands of 
 cocoa leaf images to detect CSSVD from a single photo. The system 
 was built and validated specifically for Ghanaian cocoa conditions.
 
