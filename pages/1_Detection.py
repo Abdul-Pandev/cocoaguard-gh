@@ -127,7 +127,7 @@ if image:
 
         # Step 1 — Verify this is a cocoa image
         cocoa_prob = cocoa_model.predict(processed, verbose=0)[0][0]
-        is_cocoa   = cocoa_prob >= 0.5
+        is_cocoa   = cocoa_prob <= 0.5
 
     if not is_cocoa:
 
