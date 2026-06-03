@@ -132,8 +132,8 @@ if image:
     if not is_cocoa:
 
         not_cocoa_url = (
-            f"https://raw.githubusercontent.com/Abdul-Pandev/try-host/main/"
-            f"Audio/{lang_folder}/not_cocoa.mp3"
+            f"https://raw.githubusercontent.com/Abdul-Pandev/cocoaguard-gh/main/"
+            f"Audio/{lang_folder}/non_cocoa.mp3"
         )
         st.audio(not_cocoa_url, format="audio/mp3")
         st.divider()
@@ -186,7 +186,7 @@ if image:
 
     # ── Audio Feedback ────────────────────────────────────────────
     audio_url = (
-        f"https://raw.githubusercontent.com/Abdul-Pandev/try-host/main/"
+        f"https://raw.githubusercontent.com/Abdul-Pandev/cocoaguard-gh/main/"
         f"Audio/{lang_folder}/{result['predicted_class']}.mp3"
     )
     st.audio(audio_url, format="audio/mp3")
