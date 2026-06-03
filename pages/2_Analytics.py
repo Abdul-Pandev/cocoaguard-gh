@@ -2,7 +2,7 @@ import streamlit as st
 from utils import dataset_distribution_chart, training_history_chart
 
 st.title('Dataset Analytics')
-st.caption('Overview of the data used to train CocoaGuard GH')
+st.caption('Overview of the data used to train FarmEye')
 st.divider()
 
 st.subheader('Dataset Distribution')
