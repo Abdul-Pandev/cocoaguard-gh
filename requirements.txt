@@ -1,0 +1,5 @@
+streamlit
+jax[cpu]
+numpy
+Pillow
+tensorflow
