@@ -17,9 +17,9 @@ with col1:
 
 with col2:
     st.markdown("""
-    ## What is CocoaGuard GH?
+    ## What is FarmEye?
 
-    CocoaGuard GH is an AI-powered tool designed to help
+    FarmEye is an AI-powered tool designed to help
     Ghanaian cocoa farmers detect **Cocoa Swollen Shoot Virus
     Disease (CSSVD)** early using a photo of a leaf, stem or pod.
 
@@ -42,22 +42,22 @@ st.divider()
 col3, col4, col5, col6 = st.columns(4)
 
 with col3:
-    st.info("**🔍 Detection**\n\nUpload a photo for instant CSSVD diagnosis with audio feedback")
+    st.info("**Detection**\n\nUpload a photo for instant CSSVD diagnosis with audio feedback")
 
 with col4:
-    st.info("**📊 Analytics**\n\nExplore dataset and model training performance data")
+    st.info("**Analytics**\n\nExplore dataset and model training performance data")
 
 with col5:
-    st.info("**🧠 Model Info**\n\nUnderstand how the AI model was built and evaluated")
+    st.info("**Model Info**\n\nUnderstand how the AI model was built and evaluated")
 
 with col6:
-    st.info("**📖 About**\n\nLearn about CSSVD and the story behind CocoaGuard GH")
+    st.info("**About**\n\nLearn about CSSVD and the story behind FarmEye")
 
 st.divider()
 
 st.markdown("""
 ### Supported Languages
-CocoaGuard GH provides audio diagnosis feedback in four languages
+FarmEye provides audio diagnosis feedback in four languages
 to serve farmers across Ghana.
 """)
 
@@ -75,7 +75,7 @@ with lang_col4:
 st.divider()
 
 st.caption(
-    '⚠️ CocoaGuard GH is designed to assist farmers and extension officers. '
+    '⚠️ FarmEye is designed to assist farmers and extension officers. '
     'Always consult a qualified agricultural officer for final diagnosis decisions.'
 )
 
