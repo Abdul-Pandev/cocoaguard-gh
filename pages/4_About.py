@@ -29,7 +29,7 @@ control method is removing infected trees to prevent spread to
 neighbouring plants.
 
 Ghana loses thousands of acres of cocoa farmland to CSSVD annually. 
-Early detection through tools like CocoaGuard GH gives farmers the 
+Early detection through tools like FarmEye gives farmers the 
 best chance of protecting their farms before the disease spreads.
 """)
 
