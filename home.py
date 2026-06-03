@@ -1,12 +1,12 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title='CocoaGuard GH',
+    page_title='FarmEye',
     page_icon='🌿',
     layout='centered'
 )
 
-st.title('🌿 CocoaGuard GH')
+st.title('FarmEye')
 st.caption('CSSVD Early Detection — Powered by Sankofa Intelligence')
 st.divider()
 
