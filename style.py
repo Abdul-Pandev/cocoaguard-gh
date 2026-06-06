@@ -48,6 +48,9 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 }
 [data-testid="stSidebar"] * { font-family: 'DM Sans', sans-serif; }
 
+/* Hide Streamlit's auto-generated page nav — we use our own */
+[data-testid="stSidebarNav"] { display: none !important; }
+
 /* ── Top app bar ─────────────────────────────────────── */
 .app-bar {
   display: flex;
