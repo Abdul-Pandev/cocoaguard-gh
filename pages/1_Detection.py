@@ -23,25 +23,18 @@ LANG_FOLDER = {
 with st.sidebar:
     st.markdown('<div class="app-bar-logo" style="margin:8px auto 16px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3DCC52,#C9A84C);border-radius:10px;font-size:22px;">🌿</div>', unsafe_allow_html=True)
     st.markdown('<div style="text-align:center;font-family:Syne,sans-serif;font-weight:800;font-size:1.1rem;background:linear-gradient(90deg,#3DCC52,#E8C96A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;">FarmEye</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center;font-size:0.68rem;color:#7AAB80;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
-    st.markdown('<div class="nav-label">Navigation</div>', unsafe_allow_html=True)
-    st.page_link("home.py",                         label="🏠  Dashboard")
-    st.page_link("pages/1_Detection.py",            label="🔬  Detection")
-    st.page_link("pages/2_Disease_Intelligence.py", label="🗺  Disease Intelligence")
-    st.page_link("pages/3_Analytics.py",            label="📊  Analytics")
-    st.page_link("pages/4_History.py",              label="🕘  History")
-    st.page_link("pages/6_Impact.py",               label="🌍  Impact")
-    st.page_link("pages/7_About.py",                label="ℹ  About")
+    st.markdown('<div style="text-align:center;font-size:0.68rem;color:#7AAB80;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="styled-divider" style="margin:20px 0;"></div>', unsafe_allow_html=True)
-
-    # ── Language selector in sidebar ─────────────────────────────
+    # ── Language selector — TOP of sidebar ───────────────────────
     st.markdown("""
-    <div style="font-size:0.75rem;color:#3DCC52;font-weight:700;margin-bottom:6px;letter-spacing:0.5px;">
-      🎙 Audio Language
-    </div>
-    <div style="font-size:0.72rem;color:#7AAB80;margin-bottom:8px;">
-      Diagnosis will be read aloud in your chosen language
+    <div style="background:rgba(61,204,82,0.07);border:1px solid rgba(61,204,82,0.2);
+                border-radius:10px;padding:12px 14px;margin-bottom:16px;">
+      <div style="font-size:0.75rem;color:#3DCC52;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">
+        🎙 Audio Language
+      </div>
+      <div style="font-size:0.71rem;color:#7AAB80;margin-bottom:8px;">
+        Diagnosis will be read aloud in your chosen language
+      </div>
     </div>
     """, unsafe_allow_html=True)
     language = st.selectbox(
@@ -51,14 +44,19 @@ with st.sidebar:
         label_visibility="collapsed"
     )
     lang_folder = LANG_FOLDER[language]
+    st.markdown(f'<div style="font-size:0.78rem;color:#3DCC52;margin-bottom:4px;">✓ <b>{language}</b> selected</div>', unsafe_allow_html=True)
 
-    # Show selected language confirmation
-    st.markdown(f"""
-    <div style="background:rgba(61,204,82,0.1);border:1px solid rgba(61,204,82,0.25);
-                border-radius:8px;padding:8px 12px;margin-top:4px;font-size:0.8rem;color:#3DCC52;">
-      ✓ Selected: <b>{language}</b>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="styled-divider" style="margin:14px 0;"></div>', unsafe_allow_html=True)
+
+    # ── Navigation ────────────────────────────────────────────────
+    st.markdown('<div class="nav-label">Navigation</div>', unsafe_allow_html=True)
+    st.page_link("home.py",                         label="🏠  Dashboard")
+    st.page_link("pages/1_Detection.py",            label="🔬  Detection")
+    st.page_link("pages/2_Disease_Intelligence.py", label="🗺  Disease Intelligence")
+    st.page_link("pages/3_Analytics.py",            label="📊  Analytics")
+    st.page_link("pages/4_History.py",              label="🕘  History")
+    st.page_link("pages/6_Impact.py",               label="🌍  Impact")
+    st.page_link("pages/7_About.py",                label="ℹ  About")
 
 # ── Page header ──────────────────────────────────────────────────
 st.markdown("""
