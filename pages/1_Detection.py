@@ -142,7 +142,7 @@ with col_result:
                 # ── Cocoa check ──────────────────────────────────
                 cocoa_raw  = cocoa_model.predict(processed, verbose=0)
                 cocoa_prob = float(cocoa_raw[0][0])
-                is_cocoa   = cocoa_prob > 0.3
+                is_cocoa   = cocoa_prob <= 0.5
 
                 if not is_cocoa:
                     # Not a cocoa image
