@@ -139,6 +139,6 @@ divider()
 
 # ── CTA ──────────────────────────────────────────────────────────
 st.markdown('<div style="text-align:center; padding: 20px 0 8px;">', unsafe_allow_html=True)
-st.markdown('<p style="color:#7AAB80; font-size:0.8rem;">⚠ CocoaGuard is designed to assist — always consult a qualified agricultural officer for final decisions.</p>', unsafe_allow_html=True)
+st.markdown('<p style="color:#7AAB80; font-size:0.8rem;">⚠ FarmEye is designed to assist — always consult a qualified agricultural officer for final decisions.</p>', unsafe_allow_html=True)
 st.markdown('<p style="color:#3A5C3E; font-size:0.72rem; margin-top:16px;">Sankofa Intelligence · Ghana · 2026</p>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
