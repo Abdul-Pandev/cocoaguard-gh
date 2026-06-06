@@ -1,8 +1,8 @@
 [theme]
-base = "light"
-primaryColor = "#4CAF50"
+base = "dark"
+primaryColor = "#3DCC52"
 backgroundColor = "#0A0F0A"
-secondaryBackgroundColor = "#111811"
+secondaryBackgroundColor = "#0F2212"
 textColor = "#E8F5E9"
 font = "sans serif"
 
@@ -12,5 +12,6 @@ headless = true
 [browser]
 gatherUsageStats = false
 
-[ui]
-hideSidebarNav = false
+[client]
+showSidebarNavigation = true
+toolbarMode = "minimal"
