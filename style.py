@@ -31,15 +31,15 @@ html, body, [class*="css"] {
 
 .main { background: var(--green-deep); }
 
-/* Remove streamlit header chrome */
+/* Remove streamlit header chrome but keep sidebar toggle */
 #MainMenu, footer { visibility: hidden; }
-header { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent !important; }
 .block-container { padding-top: 1.5rem; padding-bottom: 3rem; max-width: 1100px; }
 
-/* Force sidebar always open and visible */
-[data-testid="collapsedControl"] { display: none !important; }
-[data-testid="stSidebar"] { display: flex !important; visibility: visible !important; min-width: 240px !important; }
-section[data-testid="stSidebar"] > div { width: 240px !important; }
+/* Keep sidebar always expanded */
+[data-testid="stSidebarCollapsedControl"] { display: none !important; }
+[data-testid="stSidebar"][aria-expanded="false"] { display: flex !important; transform: none !important; }
+section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !important; }
 
 /* ── Sidebar ──────────────────────────────────────────── */
 [data-testid="stSidebar"] {
@@ -311,6 +311,25 @@ section[data-testid="stSidebar"] > div { width: 240px !important; }
 
 def inject_css():
     st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
+    # Force sidebar open on Streamlit Cloud via JS
+    st.markdown("""
+    <script>
+    (function() {
+        function tryOpenSidebar() {
+            try {
+                var sidebar = window.parent.document.querySelector('[data-testid="stSidebar"]');
+                if (sidebar && sidebar.getAttribute("aria-expanded") === "false") {
+                    var btn = window.parent.document.querySelector('[data-testid="stSidebarCollapsedControl"] button');
+                    if (btn) btn.click();
+                }
+            } catch(e) {}
+        }
+        setTimeout(tryOpenSidebar, 200);
+        setTimeout(tryOpenSidebar, 600);
+        setTimeout(tryOpenSidebar, 1200);
+    })();
+    </script>
+    """, unsafe_allow_html=True)
 
 def app_bar():
     st.markdown("""
