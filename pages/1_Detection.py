@@ -15,7 +15,7 @@ inject_css()
 LANG_FOLDER = {
     "English": "eng",
     "Twi":     "twi",
-    "Dagbani": "dagbani",
+    "Dagbani": "dag",
     "Ewe":     "ewe",
 }
 
