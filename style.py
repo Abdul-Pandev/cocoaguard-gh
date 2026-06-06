@@ -32,8 +32,14 @@ html, body, [class*="css"] {
 .main { background: var(--green-deep); }
 
 /* Remove streamlit header chrome */
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu, footer { visibility: hidden; }
+header { visibility: hidden; }
 .block-container { padding-top: 1.5rem; padding-bottom: 3rem; max-width: 1100px; }
+
+/* Force sidebar always open and visible */
+[data-testid="collapsedControl"] { display: none !important; }
+[data-testid="stSidebar"] { display: flex !important; visibility: visible !important; min-width: 240px !important; }
+section[data-testid="stSidebar"] > div { width: 240px !important; }
 
 /* ── Sidebar ──────────────────────────────────────────── */
 [data-testid="stSidebar"] {
@@ -311,7 +317,7 @@ def app_bar():
     <div class="app-bar">
       <div class="app-bar-logo">🌿</div>
       <div>
-        <div class="app-bar-title">FarmEye</div>
+        <div class="app-bar-title">CocoaGuard GH</div>
         <div class="app-bar-sub">Sankofa Intelligence · Ghana 2026</div>
       </div>
     </div>
