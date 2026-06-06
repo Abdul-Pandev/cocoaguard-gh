@@ -135,7 +135,7 @@ with col_result:
 
                 # Cocoa check
                 cocoa_out = cocoa_model.predict(processed, verbose=0)
-                is_cocoa  = float(cocoa_out[0][0]) > 0.5
+                is_cocoa  = float(cocoa_out[0][0]) <= 0.5
 
                 if not is_cocoa:
                     st.markdown("""
