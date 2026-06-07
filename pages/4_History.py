@@ -1,4 +1,5 @@
 import streamlit as st
+import datetime
 from style import inject_css, section_heading, divider
 import plotly.express as px
 import pandas as pd
@@ -8,8 +9,8 @@ inject_css()
 
 with st.sidebar:
     st.markdown('<div class="app-bar-logo" style="margin:8px auto 16px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3DCC52,#C9A84C);border-radius:10px;font-size:22px;">🌿</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center;font-family:Syne,sans-serif;font-weight:800;font-size:1.1rem;color:#0D1F10;margin-bottom:2px;">FarmEye</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center;font-size:0.68rem;color:#4A7A52;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center;font-family:Syne,sans-serif;font-weight:800;font-size:1.1rem;color:#0A1A0C;margin-bottom:2px;">FarmEye</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center;font-size:0.68rem;color:#2D6B38;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
     st.markdown('<div class="nav-label">Navigation</div>', unsafe_allow_html=True)
     st.page_link("home.py",                         label="🏠  Dashboard")
     st.page_link("pages/1_Detection.py",            label="🔬  Detection")
@@ -35,19 +36,19 @@ avg_conf  = round(sum(h['confidence'] for h in history) / total, 1) if total els
 
 s1, s2, s3, s4 = st.columns(4)
 with s1: st.markdown(f'<div class="stat-card"><div class="val">{total}</div><div class="lbl">Total Scans</div></div>', unsafe_allow_html=True)
-with s2: st.markdown(f'<div class="stat-card"><div class="val" style="color:#E05A4E;">{cssvd_n}</div><div class="lbl">CSSVD Detected</div></div>', unsafe_allow_html=True)
+with s2: st.markdown(f'<div class="stat-card"><div class="val" style="color:#C0392B;">{cssvd_n}</div><div class="lbl">CSSVD Detected</div></div>', unsafe_allow_html=True)
 with s3: st.markdown(f'<div class="stat-card"><div class="val">{healthy_n}</div><div class="lbl">Healthy</div></div>', unsafe_allow_html=True)
-with s4: st.markdown(f'<div class="stat-card"><div class="val" style="color:#C9A84C;">{avg_conf}%</div><div class="lbl">Avg Confidence</div></div>', unsafe_allow_html=True)
+with s4: st.markdown(f'<div class="stat-card"><div class="val" style="color:#A67C00;">{avg_conf}%</div><div class="lbl">Avg Confidence</div></div>', unsafe_allow_html=True)
 
 divider()
 
 if not history:
     st.markdown("""
-    <div style="background:rgba(15,34,18,0.4);border:1px solid rgba(61,204,82,0.12);border-radius:12px;
-                padding:64px 24px;text-align:center;color:#7AAB80;">
+    <div style="background:#F7FCF8;border:1px solid rgba(30,140,53,0.15);border-radius:12px;
+                padding:64px 24px;text-align:center;">
       <div style="font-size:3rem;margin-bottom:16px;">🕘</div>
-      <div style="font-size:1rem;font-family:'Syne',sans-serif;color:#E8F5E9;margin-bottom:8px;">No scans yet</div>
-      <div style="font-size:0.88rem;">Go to <b style="color:#3DCC52;">Detection</b> and run your first diagnosis to see it here.</div>
+      <div style="font-size:1rem;font-family:'Syne',sans-serif;color:#0A1A0C;margin-bottom:8px;">No scans yet</div>
+      <div style="font-size:0.88rem;color:#2D6B38;">Go to <b style="color:#1E8C35;">Detection</b> and run your first diagnosis to see it here.</div>
     </div>
     """, unsafe_allow_html=True)
 else:
@@ -56,19 +57,19 @@ else:
         c1, c2 = st.columns(2)
         with c1:
             fig = px.pie(names=['CSSVD','Healthy'], values=[cssvd_n, healthy_n],
-                         color_discrete_sequence=['#E05A4E','#3DCC52'], title='Result Breakdown', hole=0.5)
+                         color_discrete_sequence=['#C0392B','#1E8C35'], title='Result Breakdown', hole=0.5)
             fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
-                              font=dict(color='#E8F5E9', family='DM Sans'), title_font=dict(family='Syne', size=13))
+                              font=dict(color='#0A1A0C', family='DM Sans'), title_font=dict(family='Syne', size=13))
             st.plotly_chart(fig, use_container_width=True)
         with c2:
             df = pd.DataFrame(history[::-1])
             df['scan_num'] = range(1, len(df)+1)
             fig2 = px.line(df, x='scan_num', y='confidence', color='result',
-                           color_discrete_map={'cssvd':'#E05A4E','healthy':'#3DCC52'},
+                           color_discrete_map={'cssvd':'#C0392B','healthy':'#1E8C35'},
                            title='Confidence Per Scan',
                            labels={'scan_num':'Scan #','confidence':'Confidence (%)','result':'Result'})
             fig2.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
-                               font=dict(color='#E8F5E9', family='DM Sans'), title_font=dict(family='Syne', size=13),
+                               font=dict(color='#0A1A0C', family='DM Sans'), title_font=dict(family='Syne', size=13),
                                legend=dict(bgcolor='rgba(0,0,0,0)'))
             fig2.update_traces(line_width=2.5)
             st.plotly_chart(fig2, use_container_width=True)
@@ -82,24 +83,24 @@ else:
         sort_order = st.selectbox("Sort", ["Newest first","Oldest first","Highest confidence","Lowest confidence"], label_visibility="collapsed")
 
     filtered = history.copy()
-    if filter_result == "CSSVD":    filtered = [h for h in filtered if h['result'] == 'cssvd']
+    if filter_result == "CSSVD":     filtered = [h for h in filtered if h['result'] == 'cssvd']
     elif filter_result == "Healthy": filtered = [h for h in filtered if h['result'] == 'healthy']
-    if sort_order == "Oldest first":          filtered = filtered[::-1]
-    elif sort_order == "Highest confidence":  filtered = sorted(filtered, key=lambda x: x['confidence'], reverse=True)
-    elif sort_order == "Lowest confidence":   filtered = sorted(filtered, key=lambda x: x['confidence'])
+    if sort_order == "Oldest first":         filtered = filtered[::-1]
+    elif sort_order == "Highest confidence": filtered = sorted(filtered, key=lambda x: x['confidence'], reverse=True)
+    elif sort_order == "Lowest confidence":  filtered = sorted(filtered, key=lambda x: x['confidence'])
 
     st.markdown('<br>', unsafe_allow_html=True)
     for h in filtered:
         is_cssvd    = h['result'] == 'cssvd'
         badge_class = "badge-cssvd" if is_cssvd else "badge-healthy"
         badge_label = "CSSVD" if is_cssvd else "HEALTHY"
-        conf_color  = "#E05A4E" if is_cssvd else "#3DCC52"
+        conf_color  = "#C0392B" if is_cssvd else "#1E8C35"
         icon        = "🔴" if is_cssvd else "🟢"
         st.markdown(f"""
         <div class="history-row">
           <div style="font-size:1.2rem;">{icon}</div>
           <div style="flex:1;">
-            <div style="font-weight:600;font-size:0.9rem;color:#E8F5E9;">{h.get('filename','Unknown file')}</div>
+            <div style="font-weight:600;font-size:0.9rem;color:#0A1A0C;">{h.get('filename','Unknown file')}</div>
             <div class="history-meta">{h['timestamp']} &nbsp;·&nbsp; 🎙 {h.get('language','—')}</div>
           </div>
           <span class="history-badge {badge_class}">{badge_label}</span>
@@ -117,4 +118,4 @@ else:
         st.rerun()
 
 divider()
-st.markdown('<p style="color:#3A5C3E;font-size:0.72rem;text-align:center;">History stored for this session only · Sankofa Intelligence · Ghana · 2026</p>', unsafe_allow_html=True)
+st.markdown('<p style="color:#2D6B38;font-size:0.72rem;text-align:center;">History stored for this session only · Sankofa Intelligence · Ghana · 2026</p>', unsafe_allow_html=True)
