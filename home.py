@@ -3,7 +3,7 @@ from style import inject_css, app_bar, section_heading, divider
 import datetime
 
 st.set_page_config(
-    page_title='FarmEye · Dashboard',
+    page_title='CocoaGuard GH · Dashboard',
     page_icon='🌿',
     layout='wide',
     initial_sidebar_state='expanded'
@@ -14,16 +14,16 @@ inject_css()
 # ── Sidebar ─────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown('<div class="app-bar-logo" style="margin: 8px auto 16px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#3DCC52,#C9A84C); border-radius:10px; font-size:22px;">🌿</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center; font-family:Syne,sans-serif; font-weight:800; font-size:1.1rem; background:linear-gradient(90deg,#3DCC52,#E8C96A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:4px;">FarmEye</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center; font-size:0.68rem; color:#7AAB80; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center; font-family:Syne,sans-serif; font-weight:800; font-size:1.1rem; background:linear-gradient(90deg,#3DCC52,#E8C96A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:4px;">CocoaGuard GH</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center; font-size:0.68rem; color:#4A7A52;letter-spacing:1.5px; text-transform:uppercase; margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
     st.markdown('<div class="nav-label">Navigation</div>', unsafe_allow_html=True)
-    st.page_link("home.py", label="🏠 Dashboard")
-    st.page_link("pages/1_Detection.py", label="🔬 Detection")
-    st.page_link("pages/2_Disease_Intelligence.py", label="🗺 Disease Intelligence")
-    st.page_link("pages/3_Analytics.py", label="📊 Analytics")
-    st.page_link("pages/4_History.py", label="🕘 History")
-    st.page_link("pages/6_Impact.py", label="🌍 Impact")
-    st.page_link("pages/7_About.py", label="ℹ About")
+    st.page_link("home.py",                          label="🏠  Dashboard",            )
+    st.page_link("pages/1_Detection.py",             label="🔬  Detection",            )
+    st.page_link("pages/2_Disease_Intelligence.py",  label="🗺  Disease Intelligence", )
+    st.page_link("pages/3_Analytics.py",             label="📊  Analytics",            )
+    st.page_link("pages/4_History.py",               label="🕘  History",              )
+    st.page_link("pages/6_Impact.py",                label="🌍  Impact",               )
+    st.page_link("pages/7_About.py",                 label="ℹ  About",                )
     st.markdown('<div class="styled-divider" style="margin:20px 0;"></div>', unsafe_allow_html=True)
     st.markdown('<div style="font-size:0.72rem; color:#7AAB80; line-height:1.6;">Model: EfficientNetB3<br>Threshold: 0.65<br>Classes: CSSVD · Healthy</div>', unsafe_allow_html=True)
 
@@ -33,7 +33,7 @@ st.markdown("""
   <div class="hero-label">AI-Powered Early Warning System</div>
   <div class="hero-title">Guard Your Cocoa.<br><span>Protect Ghana's Future.</span></div>
   <div class="hero-body">
-    FarmEye uses deep learning to detect Cocoa Swollen Shoot Virus Disease (CSSVD) 
+    CocoaGuard uses deep learning to detect Cocoa Swollen Shoot Virus Disease (CSSVD) 
     from a single photograph — giving farmers and extension officers an instant, 
     multilingual diagnosis before the damage becomes irreversible.
   </div>
@@ -139,6 +139,6 @@ divider()
 
 # ── CTA ──────────────────────────────────────────────────────────
 st.markdown('<div style="text-align:center; padding: 20px 0 8px;">', unsafe_allow_html=True)
-st.markdown('<p style="color:#7AAB80; font-size:0.8rem;">⚠ FarmEye is designed to assist — always consult a qualified agricultural officer for final decisions.</p>', unsafe_allow_html=True)
+st.markdown('<p style="color:#7AAB80; font-size:0.8rem;">⚠ CocoaGuard is designed to assist — always consult a qualified agricultural officer for final decisions.</p>', unsafe_allow_html=True)
 st.markdown('<p style="color:#3A5C3E; font-size:0.72rem; margin-top:16px;">Sankofa Intelligence · Ghana · 2026</p>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
