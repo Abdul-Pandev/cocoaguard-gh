@@ -37,18 +37,24 @@ html, body, [class*="css"] {
 header[data-testid="stHeader"] { background: transparent !important; }
 .block-container { padding-top: 1.5rem; padding-bottom: 3rem; max-width: 1100px; }
 
-/* Keep sidebar always expanded */
-[data-testid="stSidebarCollapsedControl"] { display: none !important; }
-[data-testid="stSidebar"][aria-expanded="false"] { display: flex !important; transform: none !important; }
-section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !important; }
-
-/* ── Sidebar ──────────────────────────────────────────── */
+/* ── Sidebar — collapsible, styled ───────────────────── */
 [data-testid="stSidebar"] {
   background: #FFFFFF !important;
   border-right: 1px solid rgba(30,140,53,0.15) !important;
   box-shadow: 2px 0 12px rgba(0,0,0,0.06) !important;
 }
 [data-testid="stSidebar"] * { font-family: 'DM Sans', sans-serif; }
+
+/* Style the collapse toggle button */
+[data-testid="stSidebarCollapsedControl"] {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(30,140,53,0.2) !important;
+  border-radius: 0 8px 8px 0 !important;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08) !important;
+}
+[data-testid="stSidebarCollapsedControl"] button {
+  color: #1E8C35 !important;
+}
 
 /* Hide Streamlit's auto-generated page nav — we use our own */
 [data-testid="stSidebarNav"] { display: none !important; }
@@ -306,25 +312,7 @@ p, li, span, label, div {
 
 def inject_css():
     st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
-    # Force sidebar open on Streamlit Cloud via JS
-    st.markdown("""
-    <script>
-    (function() {
-        function tryOpenSidebar() {
-            try {
-                var sidebar = window.parent.document.querySelector('[data-testid="stSidebar"]');
-                if (sidebar && sidebar.getAttribute("aria-expanded") === "false") {
-                    var btn = window.parent.document.querySelector('[data-testid="stSidebarCollapsedControl"] button');
-                    if (btn) btn.click();
-                }
-            } catch(e) {}
-        }
-        setTimeout(tryOpenSidebar, 200);
-        setTimeout(tryOpenSidebar, 600);
-        setTimeout(tryOpenSidebar, 1200);
-    })();
-    </script>
-    """, unsafe_allow_html=True)
+
 
 def app_bar():
     st.markdown("""
