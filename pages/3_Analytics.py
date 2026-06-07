@@ -190,7 +190,7 @@ st.markdown("""
 
   <div>
     <div style="color:#C9A84C;font-weight:700;font-size:0.85rem;">BASE MODEL</div>
-    <div style="font-weight:600;">EfficientNetB3</div>
+    <div style="font-weight:600;">EfficientNetB0</div>
     <div style="color:#7AAB80;font-size:0.8rem;">Pretrained on ImageNet</div>
   </div>
 
