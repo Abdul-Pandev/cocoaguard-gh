@@ -183,7 +183,7 @@ st.markdown(
 
 
 divider()
-section_heading("Model Architecture")
+section_heading(" ", "Model Architecture")
 
 st.markdown(f"""
 <div class="feature-card" style="
