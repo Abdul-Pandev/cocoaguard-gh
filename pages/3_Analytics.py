@@ -180,3 +180,93 @@ st.markdown(
     '<p style="text-align:center;color:#3A5C3E;font-size:0.75rem;">Sankofa Intelligence · Ghana · 2026</p>',
     unsafe_allow_html=True
 )
+
+
+divider()
+section_heading("Model Architecture")
+
+st.markdown(f"""
+<div class="feature-card" style="
+    background:{ThemeColors.CARD_BG};
+    border:1px solid {ThemeColors.BORDER};
+    border-radius:14px;
+    padding:20px;
+">
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+
+    <div>
+      <div style="color:{ThemeColors.GOLD};font-weight:700;font-size:0.8rem;margin-bottom:6px;">
+        BASE MODEL
+      </div>
+      <div style="color:{ThemeColors.TEXT_PRIMARY};font-size:0.95rem;font-weight:600;">
+        EfficientNetB0
+      </div>
+      <div style="color:{ThemeColors.TEXT_SECONDARY};font-size:0.8rem;">
+        Pretrained on ImageNet
+      </div>
+    </div>
+
+    <div>
+      <div style="color:{ThemeColors.GOLD};font-weight:700;font-size:0.8rem;margin-bottom:6px;">
+        INPUT SIZE
+      </div>
+      <div style="color:{ThemeColors.TEXT_PRIMARY};font-size:0.95rem;font-weight:600;">
+        224 × 224 px
+      </div>
+      <div style="color:{ThemeColors.TEXT_SECONDARY};font-size:0.8rem;">
+        RGB images
+      </div>
+    </div>
+
+    <div>
+      <div style="color:{ThemeColors.GOLD};font-weight:700;font-size:0.8rem;margin-bottom:6px;">
+        OUTPUT
+      </div>
+      <div style="color:{ThemeColors.TEXT_PRIMARY};font-size:0.95rem;font-weight:600;">
+        Sigmoid (binary)
+      </div>
+      <div style="color:{ThemeColors.TEXT_SECONDARY};font-size:0.8rem;">
+        CSSVD vs Healthy
+      </div>
+    </div>
+
+    <div>
+      <div style="color:{ThemeColors.GOLD};font-weight:700;font-size:0.8rem;margin-bottom:6px;">
+        THRESHOLD
+      </div>
+      <div style="color:{ThemeColors.TEXT_PRIMARY};font-size:0.95rem;font-weight:600;">
+        0.65 (optimal)
+      </div>
+      <div style="color:{ThemeColors.TEXT_SECONDARY};font-size:0.8rem;">
+        Tuned on validation set
+      </div>
+    </div>
+
+    <div>
+      <div style="color:{ThemeColors.GOLD};font-weight:700;font-size:0.8rem;margin-bottom:6px;">
+        AUGMENTATION
+      </div>
+      <div style="color:{ThemeColors.TEXT_PRIMARY};font-size:0.95rem;font-weight:600;">
+        Flip, Rotate, Zoom
+      </div>
+      <div style="color:{ThemeColors.TEXT_SECONDARY};font-size:0.8rem;">
+        Applied during training
+      </div>
+    </div>
+
+    <div>
+      <div style="color:{ThemeColors.GOLD};font-weight:700;font-size:0.8rem;margin-bottom:6px;">
+        FRAMEWORK
+      </div>
+      <div style="color:{ThemeColors.TEXT_PRIMARY};font-size:0.95rem;font-weight:600;">
+        TensorFlow / Keras
+      </div>
+      <div style="color:{ThemeColors.TEXT_SECONDARY};font-size:0.8rem;">
+        Fine-tuning pipeline
+      </div>
+    </div>
+
+  </div>
+</div>
+""", unsafe_allow_html=True)
