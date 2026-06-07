@@ -8,8 +8,8 @@ inject_css()
 
 with st.sidebar:
     st.markdown('<div class="app-bar-logo" style="margin:8px auto 16px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3DCC52,#C9A84C);border-radius:10px;font-size:22px;">🌿</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center;font-family:Syne,sans-serif;font-weight:800;font-size:1.1rem;background:linear-gradient(90deg,#3DCC52,#E8C96A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;">FarmEye</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center;font-size:0.68rem;color:#7AAB80;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center;font-family:Syne,sans-serif;font-weight:800;font-size:1.1rem;color:#0D1F10;margin-bottom:2px;">FarmEye</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center;font-size:0.68rem;color:#4A7A52;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Sankofa Intelligence</div>', unsafe_allow_html=True)
     st.markdown('<div class="nav-label">Navigation</div>', unsafe_allow_html=True)
     st.page_link("home.py",                         label="🏠  Dashboard")
     st.page_link("pages/1_Detection.py",            label="🔬  Detection")
