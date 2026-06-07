@@ -25,7 +25,7 @@ with st.sidebar:
     st.page_link("pages/6_Impact.py",                label="🌍  Impact")
     st.page_link("pages/7_About.py",                 label="ℹ  About")
     st.markdown('<div class="styled-divider" style="margin:20px 0;"></div>', unsafe_allow_html=True)
-    st.markdown('<div style="font-size:0.72rem; color:#2D6B38; line-height:1.6;">Model: EfficientNetB3<br>Threshold: 0.65<br>Classes: CSSVD · Healthy</div>', unsafe_allow_html=True)
+    st.markdown('<div style="font-size:0.72rem; color:#2D6B38; line-height:1.6;">Model: EfficientNetB0<br>Threshold: 0.65<br>Classes: CSSVD · Healthy</div>', unsafe_allow_html=True)
 
 # ── Hero ─────────────────────────────────────────────────────────
 st.markdown("""
