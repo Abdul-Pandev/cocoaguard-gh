@@ -6,16 +6,16 @@ GLOBAL_CSS = """
 
 /* ── Root tokens ──────────────────────────────────────── */
 :root {
-  --green-deep:   #F4FAF5;
+  --green-deep:   #FFFFFF;
   --green-dark:   #FFFFFF;
-  --green-mid:    #E8F5E9;
+  --green-mid:    #F0F7F1;
   --green-accent: #1E8C35;
   --green-bright: #25A340;
   --gold:         #A67C00;
   --gold-light:   #C9A84C;
   --cream:        #F9F6EE;
-  --text-primary: #0D1F10;
-  --text-muted:   #4A7A52;
+  --text-primary: #0A1A0C;
+  --text-muted:   #2D6B38;
   --red-alert:    #C0392B;
   --border:       rgba(30,140,53,0.15);
   --card-bg:      rgba(255,255,255,0.9);
@@ -29,8 +29,8 @@ html, body, [class*="css"] {
   color: var(--text-primary);
 }
 
-.main { background: #F4FAF5 !important; }
-.stApp { background: #F4FAF5 !important; }
+.main { background: #FFFFFF !important; }
+.stApp { background: #FFFFFF !important; }
 
 /* Remove streamlit header chrome but keep sidebar toggle */
 #MainMenu, footer { visibility: hidden; }
@@ -45,7 +45,7 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 /* ── Sidebar ──────────────────────────────────────────── */
 [data-testid="stSidebar"] {
   background: #FFFFFF !important;
-  border-right: 1px solid rgba(30,140,53,0.12) !important;
+  border-right: 1px solid rgba(30,140,53,0.15) !important;
   box-shadow: 2px 0 12px rgba(0,0,0,0.06) !important;
 }
 [data-testid="stSidebar"] * { font-family: 'DM Sans', sans-serif; }
@@ -87,7 +87,7 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 .hero-title span { color: #3DCC52; }
 .hero-body {
   font-size: 1rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.85);
   max-width: 560px;
   line-height: 1.7;
 }
@@ -97,30 +97,30 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
   font-family: 'Syne', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #0D1F10;
+  color: #0A1A0C;
   margin: 32px 0 16px;
   display: flex; align-items: center; gap: 10px;
 }
 .section-heading::after {
   content: '';
   flex: 1; height: 1px;
-  background: rgba(30,140,53,0.12);
+  background: rgba(30,140,53,0.15);
 }
 
 /* ── Stat card ───────────────────────────────────────── */
 .stat-card {
   background: #FFFFFF;
-  border: 1px solid rgba(30,140,53,0.12);
+  border: 1px solid rgba(30,140,53,0.15);
   border-radius: var(--radius);
   padding: 24px 20px;
   text-align: center;
   transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .stat-card:hover {
-  border-color: rgba(30,140,53,0.3);
+  border-color: rgba(30,140,53,0.35);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30,140,53,0.1);
+  box-shadow: 0 6px 20px rgba(30,140,53,0.12);
 }
 .stat-card .val {
   font-family: 'Syne', sans-serif;
@@ -131,7 +131,7 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 }
 .stat-card .lbl {
   font-size: 0.78rem;
-  color: #4A7A52;
+  color: #2D6B38;
   margin-top: 6px;
   letter-spacing: 0.5px;
 }
@@ -139,16 +139,16 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 /* ── Feature card ────────────────────────────────────── */
 .feature-card {
   background: #FFFFFF;
-  border: 1px solid rgba(30,140,53,0.12);
+  border: 1px solid rgba(30,140,53,0.15);
   border-radius: var(--radius);
   padding: 24px;
   height: 100%;
   transition: border-color 0.25s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 .feature-card:hover {
-  border-color: rgba(166,124,0,0.25);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-color: rgba(166,124,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.09);
 }
 .feature-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
 .feature-card .title {
@@ -156,9 +156,9 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 8px;
-  color: #0D1F10;
+  color: #0A1A0C;
 }
-.feature-card .desc { font-size: 0.875rem; color: #4A7A52; line-height: 1.6; }
+.feature-card .desc { font-size: 0.875rem; color: #2D6B38; line-height: 1.6; }
 
 /* ── Alert boxes ─────────────────────────────────────── */
 .alert-cssvd {
@@ -180,23 +180,23 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 8px;
-  color: #0D1F10;
+  color: #0A1A0C;
 }
 
 /* ── History rows ────────────────────────────────────── */
 .history-row {
   display: flex; align-items: center; gap: 14px;
   background: #FFFFFF;
-  border: 1px solid rgba(30,140,53,0.1);
+  border: 1px solid rgba(30,140,53,0.12);
   border-radius: var(--radius);
   padding: 14px 18px;
   margin-bottom: 10px;
   transition: border-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 .history-row:hover {
-  border-color: rgba(30,140,53,0.25);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  border-color: rgba(30,140,53,0.28);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .history-badge {
   padding: 3px 10px;
@@ -209,14 +209,14 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 }
 .badge-cssvd   { background: #FEE2E2; color: #991B1B; border: 1px solid rgba(192,57,43,0.2); }
 .badge-healthy { background: #DCFCE7; color: #166534; border: 1px solid rgba(30,140,53,0.2); }
-.history-meta  { font-size: 0.8rem; color: #4A7A52; }
+.history-meta  { font-size: 0.8rem; color: #2D6B38; }
 .history-conf  { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-left: auto; }
 
 /* ── Upload zone ─────────────────────────────────────── */
 [data-testid="stFileUploader"] {
-  border: 2px dashed rgba(30,140,53,0.2) !important;
+  border: 2px dashed rgba(30,140,53,0.25) !important;
   border-radius: var(--radius) !important;
-  background: #F9FCF9 !important;
+  background: #F7FCF8 !important;
 }
 
 /* ── Buttons ─────────────────────────────────────────── */
@@ -240,7 +240,7 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
   font-size: 0.65rem;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #4A7A52;
+  color: #2D6B38;
   padding: 16px 8px 8px;
 }
 
@@ -266,7 +266,7 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
   font-weight: 800;
   color: #A67C00;
 }
-.impact-lbl { color: #4A7A52; font-size: 0.9rem; margin-top: 4px; }
+.impact-lbl { color: #2D6B38; font-size: 0.9rem; margin-top: 4px; }
 
 /* ── Language chips ──────────────────────────────────── */
 .lang-chip {
@@ -282,7 +282,7 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
 
 /* ── Scrollbar ───────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #F4FAF5; }
+::-webkit-scrollbar-track { background: #FFFFFF; }
 ::-webkit-scrollbar-thumb { background: #C8E6C9; border-radius: 3px; }
 
 /* ── Progress bar ────────────────────────────────────── */
@@ -295,6 +295,12 @@ section[data-testid="stSidebar"] { min-width: 244px !important; width: 244px !im
   background: #FFFFFF !important;
   border-color: rgba(30,140,53,0.2) !important;
 }
+
+/* ── Inline text colour fixes for white bg ───────────── */
+p, li, span, label, div {
+  color: inherit;
+}
+.stMarkdown p { color: #0A1A0C; }
 </style>
 """
 
